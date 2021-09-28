@@ -10,7 +10,6 @@
     echo "<b>Câu b. Số $ngaunhien có $sochuso số</b><br>";
 
     timmax($ngaunhien);
-
     function timmax($n)
     {
         $n = strval($n);

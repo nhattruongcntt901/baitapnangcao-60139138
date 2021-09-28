@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link
+        href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="http://localhost/baitap/css/style.css">
+    <link rel="stylesheet" href="http://localhost/css/font.css">
+    <title>TT SOCIAL</title>
+    <style>
+    .flex-doc {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        align-items: center;
+    }
+
+    .flex-ngang {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        justify-content: center
+    }
+    .giancach{
+        margin-left:10px;
+        margin-right:10px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class='flex-doc flex-ngang' style='height:100vh;'>
+        <form action="inthongtin.php" method="POST" autocomplete="off" name='dangki' class='post w-50'>
+            <h2 class="font-lato-light">Thông tin người dùng</h2>
+            <div class='row flex-ngang'>
+                <div class='form-outline col-md-5'>
+                    <div style="margin-left:20px;" class="flex-doc">
+                        <span class="material-icons-outlined">badge</span>
+                        <input class="form-in" type="text" autocomplete="off" name="hoten" id='hoten' placeholder="Họ và Tên" required/>
+                    </div>
+                </div>
+                <div class='form-outline col-md-5'>
+                    <div style="margin-left:20px;" class="flex-doc">
+                        <span class="material-icons-outlined">call</span>
+                        <input class="form-in" type="number" autocomplete="off" name="sdt" id='sdt' placeholder="Số điện thoại" required/>
+                    </div>
+                </div>
+            </div>
+            <div class='row flex-ngang'>
+                <div class='form-outline col-md-5'>
+                    <div style="margin-left:20px;" class="flex-doc">
+                        <span class="material-icons-outlined">location_on</span>
+                        <input class="form-in" type="text" minlength="6" maxlength="25" autocomplete="off" name="diachi" id='diachi' placeholder="Địa chỉ" required/>
+                    </div>
+                </div>
+                <div class='form-outline col-md-5'>
+                    <div class="flex-doc">
+                        <select class='select-in w-100' name='quoctich' id='quoctich' required>
+                            <option value="" disabled selected>Chọn quốc tịch</option>
+                            <option value="Việt Nam">Việt Nam</option>
+                            <option value="Trung Quốc">Trung Quốc</option>
+                            <option value="Mỹ">Mỹ</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class='row flex-ngang'>
+                <div class='form-outline col-md-5 flex-doc flex-ngang'>
+                    <div style="margin-left:20px;"  class="flex-doc flex-ngang">
+                        <span for="nam">Nam</span>
+                            <input type="radio" name='gioitinh' id='nam' value="Nam" checked="true"/>
+                        <span for="nu"  style='margin-left:30px'>Nữ</span>
+                            <input type="radio" name='gioitinh' id='nu' value="Nữ"/>
+                    </div>
+                </div>
+            </div>
+            
+            <div class='row flex-ngang'>
+                <div class='form-outline col-md-10 flex-doc' style='height:50px'>
+                    <div style="margin-left:20px;" class="flex-doc">
+                        <b>Các môn đã học:</b>
+                        <div class="giancach"><input id='monhoc1' type="checkbox" name='monhoc[]' value="PHP & MySQL"/>PHP & MySQL</div>
+                        <div class="giancach"><input id='monhoc2' type="checkbox" name='monhoc[]' value="C#"/>C#</div>
+                        <div class="giancach"><input id='monhoc3' type="checkbox" name='monhoc[]' value="XML"/>XML</div>
+                        <div class="giancach"><input id='monhoc4' type="checkbox" name='monhoc[]' value="Python"/>Python</div>
+                    </div>
+                </div>
+            </div>
+            <div class='row flex-ngang'>
+                <div class='form-outline col-md-10 flex-doc' style='height:100px'>
+                    <div style="margin-left:20px;" class="flex-doc">
+                        <b>Ghi chú</b>
+                        <textarea id='ghichu' name="ghichu" cols='50' rows="3"  placeholder="Nhập ghi chú" style="background-color: transparent;margin-left:10px;border: none;"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex-ngang">
+                <button class="w-75 btn" type="submit"  style="background-color: rgb(60, 59, 97);color:white">Gửi</button>
+            </div>
+            
+            <div class='flex-ngang' style="margin-top:20px">
+                <button class="w-50 btn" type="button" onclick="huy()" style="background-color: rgba(60, 59, 97, 0.514);color:white">Hủy</button>
+            </div>
+            <script>
+                var hoten = document.getElementById("hoten");
+                var sdt = document.getElementById("sdt");
+                var diachi = document.getElementById("diachi");
+                var monhoc1 = document.getElementById("monhoc1");
+                var monhoc2 = document.getElementById("monhoc2");
+                var monhoc3 = document.getElementById("monhoc3");
+                var monhoc4 = document.getElementById("monhoc4");
+                var ghichu = document.getElementById("ghichu");
+            
+                function huy(){
+                    hoten.value = "";
+                    sdt.value = "";
+                    diachi.value = "";
+                    monhoc1.checked = false;
+                    monhoc2.checked = false;
+                    monhoc3.checked = false;
+                    monhoc4.checked = false;
+                    ghichu.value = "";
+                   
+                }
+            </script>
+        </form>
+    </div>
+</body>
+
+</html>
