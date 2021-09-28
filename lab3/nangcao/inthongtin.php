@@ -60,15 +60,15 @@
 ?>
 <body>
     <div class='flex-doc flex-ngang' style='height:100vh;'>
-        <div class="post w-50 row">
+        <div class="post w-50 row animate__animated animate__zoomInUp">
             <div class='col-md-6'>
-                <p>Họ tên:</p>
-                <p>Số điện thoại:</p>
-                <p>Địa chỉ:</p>
-                <p>Giới tính:</p>
-                <p>Quốc tịch:</p>
-                <p>Cách môn đã học:</p>
-                <p>Ghi chú:</p>
+                <p><b>Họ tên:</b></p>
+                <p><b>Số điện thoại:</b></p>
+                <p><b>Địa chỉ:</b></p>
+                <p><b>Giới tính:</b></p>
+                <p><b>Quốc tịch:</b></p>
+                <p><b>Cách môn đã học:</b></p>
+                <p><b>Ghi chú:</b></p>
             </div>
             <div class='col-md-6'>
                 <p><?php echo $hoten; ?></p>
