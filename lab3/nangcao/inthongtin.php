@@ -55,7 +55,8 @@
     $diachi = $_POST['diachi'];
     $gioitinh = $_POST['gioitinh'];
     $quoctich = $_POST['quoctich'];
-    $monhoc = $_POST['monhoc'];
+    if(isset($_POST['monhoc']))
+        $monhoc = $_POST['monhoc'];
     $ghichu = $_POST['ghichu'];
 ?>
 <body>
@@ -77,9 +78,13 @@
                 <p><?php echo $gioitinh; ?></p>
                 <p><?php echo $quoctich;?></p>
                 <p><?php
+                    if(isset($_POST['monhoc']))
                             foreach($monhoc as $value) {
                                 echo $value.", ";
-                            } ?></p>
+                            } 
+                    else   echo "Không";        
+                            ?></p>
+                    
                 <p><?php echo $ghichu; ?></p>
                 <div class='flex-ngang'>
                     <a href="javascript:window.history.back(-1);">Trở về trang trước</a>
