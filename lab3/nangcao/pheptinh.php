@@ -47,29 +47,15 @@
         margin-left:10px;
         margin-right:10px;
     }
+    .noilen{
+  z-index: 1;
+}
     </style>
 </head>
 
 <body>
-    <?php
-    $dongia = "20000";
-    if(isset($_POST['csmoi'])&&isset($_POST['cscu'])&&isset($_POST['dongia'])&&isset($_POST['chuho']))
-    {
-        if($_POST['csmoi']>$_POST['cscu']&&$_POST['csmoi']>=0&&$_POST['cscu']>=0&&$_POST['dongia']>=0)
-        {
-            $tench = $_POST['chuho'];
-            $csm = $_POST['csmoi'];
-            $csc = $_POST['cscu'];
-            $dongia = $_POST['dongia'];
-
-            $tinhtien = ($csm-$csc)*$dongia;
-        }
-        else
-            echo "Giá trị nhập vào không hợp lệ";
-    }
-?>
     <div class='flex-doc flex-ngang' style='height:100vh'>
-        <form class='post w-50 flex-ngang animate__animated animate__zoomInUp' action='xulypheptinh.php' method='POST'>
+        <form class='post w-50 flex-ngang noilen' action='xulypheptinh.php' method='POST'>
             <div>
                 <h2 style='color:rgb(255,255,255,0.6)'>Phép tính hai số</h2>
                 <div class='form-outline'>
@@ -79,7 +65,7 @@
                             <input type='radio' name='pheptoan' value='cong' checked='true'/>
                         </div>   
                         <div class='giancach'>
-                            <span>trừ</span>
+                            <span>Trừ</span>
                             <input type='radio' name='pheptoan' value='tru'/>
                         </div class='giancach'> 
                         <div class='giancach'>

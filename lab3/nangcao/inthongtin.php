@@ -47,6 +47,9 @@
         margin-left:10px;
         margin-right:10px;
     }
+    .noilen{
+  z-index: 1;
+}
     </style>
 </head>
 <?php
@@ -61,7 +64,7 @@
 ?>
 <body>
     <div class='flex-doc flex-ngang' style='height:100vh;'>
-        <div class="post w-50 row animate__animated animate__zoomInUp">
+        <div class="post w-50 row animate__animated animate__zoomInUp noilen">
             <div class='col-md-6'>
                 <p><b>Họ tên:</b></p>
                 <p><b>Số điện thoại:</b></p>

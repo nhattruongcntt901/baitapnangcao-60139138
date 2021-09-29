@@ -43,7 +43,9 @@
         display: flex;
         justify-content: center
     }
-
+    .noilen{
+  z-index: 1;
+}
     img[src*="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"] {
         display: none;
     }
@@ -81,7 +83,7 @@
     }
 ?>
     <div class='flex-doc flex-ngang' style='height:100vh'>
-        <form class='post w-50 flex-ngang' action='hinhtron.php' method='POST'>
+        <form class='post w-50 flex-ngang noilen' action='hinhtron.php' method='POST'>
             <div>
                 <h2 style='color:rgb(255,255,255,0.6)'>Tính diện tích hình tròn</h2>
                 <div class='form-outline'>

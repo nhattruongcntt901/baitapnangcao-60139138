@@ -69,7 +69,7 @@ padding: 1rem 2rem;
 -webkit-backdrop-filter: blur(10px);
 backdrop-filter: blur(10px);
 background-color: rgba(255, 255, 255, 0.5); 
-z-index: -1;
+z-index: 1;
 } 
 .dialog-table1 {
 -webkit-backdrop-filter: blur(10px);
@@ -111,7 +111,9 @@ to{
   backdrop-filter: blur(2em);
 }
 }
-
+.noilen{
+  z-index: 1;
+}
 
 .dangbai{
   width: 100%;

@@ -33,6 +33,7 @@
         display: -webkit-flex;
         display: flex;
         align-items: center;
+        z-index: 1;
     }
 
     .flex-ngang {
@@ -43,7 +44,13 @@
         display: flex;
         justify-content: center
     }
+    .cangiua{
+        margin:auto;
 
+    }
+    .noilen{
+  z-index: 1;
+}
     img[src*="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"] {
         display: none;
     }
@@ -82,8 +89,8 @@
         }
     }
 ?>
-    <div class='flex-doc flex-ngang' style='height:100vh'>
-        <form class='post w-50 flex-ngang' action='bai1.php' method='POST'>
+    <div style='height:100vh;' class='flex-doc flex-ngang'>
+        <form class='post w-50 flex-ngang noilen' action='bai1.php' method='POST'>
             <div>
                 <h2 style='color:rgb(255,255,255,0.6)'>Tính diện tích hình chữ nhật</h2>
                 <div class='form-outline'>

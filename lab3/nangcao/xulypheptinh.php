@@ -47,6 +47,9 @@
         margin-left:10px;
         margin-right:10px;
     }
+    .noilen{
+  z-index: 1;
+}
     </style>
 </head>
 
@@ -77,7 +80,7 @@
 
 ?>
     <div class='flex-doc flex-ngang' style='height:100vh'>
-        <form class='post w-50 flex-ngang animate__animated animate__zoomInUp' action='xulypheptinh.php' method='POST'>
+        <form class='post w-50 flex-ngang animate__animated animate__zoomInUp noilen' action='xulypheptinh.php' method='POST'>
             <div>
                 <h2 style='color:rgb(255,255,255,0.6)'>Phép tính hai số</h2>
                 <div>
