@@ -33,7 +33,6 @@
         display: -webkit-flex;
         display: flex;
         align-items: center;
-        z-index: 1;
     }
 
     .flex-ngang {
@@ -43,11 +42,6 @@
         display: -webkit-flex;
         display: flex;
         justify-content: center
-    }
-
-    .cangiua {
-        margin: auto;
-
     }
 
     .noilen {
@@ -61,61 +55,93 @@
 </head>
 
 <body>
-    <?php
-    if(isset($_POST['chieudai'])&&isset($_POST['chieurong']))
+<?php
+    if(isset($_POST['so']))
     {
-        if($_POST['chieudai']!="" && $_POST['chieurong']!="")
+        $n = $_POST['so'];
+        $sochuso = strlen($n);
+        $solonnhat = timmax($n);
+        $snt_behon_n = "";
+        if(is_numeric($n)==true && $n>=10 && $n<=1000)
         {
-            $chieudai = $_POST['chieudai'];
-            $chieurong =$_POST['chieurong'];
-            $dientich = $chieudai*$chieurong;
-            echo"
-            <div class='row w-100' style='position:fixed;margin-top:33vh'>
-                <div class='col-md-10'>
-        
-                </div>
-                <div class='col-md-2'>
-                    <div class='post font-lato-heavy animate__animated animate__bounceInDown' style='font-size: 1em;color:rgb(71, 69, 110)' id='checkloidk'>
-                        <b>Kết quả</b>
-                        <div class='row no-gutters flex-ngang'>
-                            <hr width='90%' color='white' style='opacity: 30%;' />
-                        </div>
-                        <div>
-                            <p>Chiều dài: $chieudai</p>
-                            <p>Chiều rộng: $chieurong</p>
-                            <p>Diện tích: $dientich</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            ";
+            for($i = 0; $i <= $n; $i ++)
+            {
+                if (lasonguyento($i)==true) 
+                {
+                    $snt_behon_n .=" ".$i; 
+                }
+            }
+            $ketqua = "Câu a. Các số nguyên tố nhỏ hơn $n là: $snt_behon_n&#10;Câu b. Số $n có $sochuso chữ số&#10;Câu c. Chữ số lớn nhất trong $n là $solonnhat";
         }
     }
+    function timmax($n)
+    {
+        $n = strval($n);
+        $max = $n[0];
+        for($i=0;$i<strlen($n);$i++)
+        {
+            if($n[$i] > $max)
+            {
+                $max = $n[$i];
+            } 
+        }
+        return $max;
+    }
+    function lasonguyento($n) {
+        // so nguyen n < 2 khong phai la so nguyen to
+        if ($n < 2) {
+            return false;
+        }
+        // check so nguyen to khi n >= 2
+        $squareRoot = sqrt($n);
+        for($i = 2; $i <= $squareRoot; $i ++) {
+            if ($n % $i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
 ?>
-    <div style='height:100vh;' class='flex-doc flex-ngang'>
-        <form class='post w-50 flex-ngang noilen' action='bai1.php' method='POST'>
+    <div class='flex-ngang'>
+        <form class='post w-50 flex-ngang noilen' action='baitaptrenlop1.php' method='POST' style='margin-top:10vh'>
             <div>
-                <h2 style='color:rgb(255,255,255,0.6)'>Tính diện tích hình chữ nhật</h2>
+                <h2 style='color:rgb(255,255,255,0.6)'>Hãy nhập 1 số N</h2>
                 <div class='form-outline'>
                     <div style="margin-left:20px;" class="flex-doc">
                         <span class="material-icons-outlined">straighten</span>
-                        <input class="form-in" type="text" name="chieudai"
-                            <?php if(isset($_POST['chieudai'])&&isset($_POST['chieurong'])) echo "value='$chieudai'" ?>
-                            placeholder="Nhập chiều dài" required />
-                    </div>
-                </div>
-                <div class='form-outline'>
-                    <div style="margin-left:20px;" class="flex-doc">
-                        <span class="material-icons-outlined" style='transform: rotate(90deg);'>straighten</span>
-                        <input class="form-in" type="text" name="chieurong"
-                            <?php if(isset($_POST['chieudai'])&&isset($_POST['chieurong'])) echo "value='$chieurong'" ?>
-                            placeholder="Nhập chiều rộng" required />
+                        <input class="form-in" type="number" name="so"
+                            <?php if(isset($_POST['so'])) echo "value='$n'" ?> placeholder="Nhập N"
+                            required />
                     </div>
                 </div>
                 <button class="w-100 btn" type="submit"
                     style="background-color: rgb(60, 59, 97);color:white">Tính</button>
             </div>
         </form>
+    </div>
+    <div class='row no-gutters w-100' style='margin-top:5vh'>
+        <div class='col-md-3'></div>
+        <div class='col-md-6 flex-ngang'>
+            <div class='post font-lato-heavy animate__animated animate__backInLeft w-100'
+                style='font-size: 1em;color:rgb(71, 69, 110)'>
+                <b>Kết quả</b>
+                <div class='row no-gutters flex-ngang'>
+                    <hr width='90%' color='white' style='opacity: 30%;' />
+                </div>
+                <div>
+                    <textarea class='dangbai' rows='5'><?php
+                            if(isset($_POST['so']))
+                            {
+                                if(is_numeric($n)==true && $n>=10 && $n<=1000)
+                                    echo $ketqua;
+                                else
+                                    echo "Bạn đã nhập N < 10 hoặc N >1000";
+                            }                
+                        ?></textarea>
+                </div>
+            </div>
+        </div>
+        <div class='col-md-3'></div>
     </div>
 </body>
 
