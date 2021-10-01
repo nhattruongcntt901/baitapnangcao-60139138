@@ -33,7 +33,9 @@
     <!-- navbar -->
     <div class='nav-bar sticky-top row no-gutters'>
         <div class="col-md-3">
-            <div style="float: left;margin-top: 1vh;margin-left:1%;"><h4 style="color:rgb(255,255,255)">TT Music</h4></div>
+            <div style="float: left;margin-top: 1vh;margin-left:1%;">
+                <h4 style="color:rgb(255,255,255)">TT Music</h4>
+            </div>
         </div>
         <div class="col-md-6"></div>
         <div class="col-md-3">
@@ -42,12 +44,10 @@
                 <span class="material-icons" style="font-size: 2em;">account_circle</span>
             </div>
         </div>
-        
-        
     </div>
     <!-- navbar end -->
-    <audio id="music-run" src="music/Forgetmenow.mp3" style="width:100%"></audio>
-    
+
+
 
 
 
@@ -117,181 +117,81 @@
                     style="background-color: rgb(65, 225, 126);width: 300px;height: 60vh;"></div>
             </div>
             <div class="col-md-8">
-                <div class="flex-ngang">
-                    <span style="margin-right:20%;"><b>Tên bài hát</b></span>
-                    <span><b>Thời gian</b></span>
+                <div class="flex-ngang row no-gutters">
+                    <div class="col-md-5 flex-ngang"><span><b>Tên bài hát</b></span></div>
+                    <div class="col-md-7 flex-ngang"><span><b>Thời gian</b></span></div>
                 </div>
                 <div class="row no-gutters flex-ngang" style="margin-top:2vh">
                     <hr width="90%" color="white" style="opacity: 30%;" />
                 </div>
                 <div style="overflow-y: scroll;height: 50vh;width: 100%;background-color:#182c44;border-radius: 10px;">
-                    <div class="gian-cach radius-border flex-doc background-change like"
-                        style="width: 98%;height: 70px;">
-                        <div class="gian-cach" style="color: rgb(255,255,255,0.8);">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor"
-                                class="bi bi-music-note-list" viewBox="0 0 16 16">
-                                <path d="M12 13c0 1.105-1.12 2-2.5 2S7 14.105 7 13s1.12-2 2.5-2 2.5.895 2.5 2z" />
-                                <path fill-rule="evenodd" d="M12 3v10h-1V3h1z" />
-                                <path d="M11 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 16 2.22V4l-5 1V2.82z" />
-                                <path fill-rule="evenodd"
-                                    d="M0 11.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 7H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 3H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5z" />
-                            </svg>
+
+
+
+                    <div class=" row no-gutters gian-cach radius-border flex-doc background-change like" style="width: 98%;height: 70px;">
+                        <div  id='huong' onclick="changeMusic(this.id)" class="col-md-8 flex-doc">
+                            <div class="gian-cach" style="color: rgb(255,255,255,0.8);">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor"
+                                    class="bi bi-music-note-list" viewBox="0 0 16 16">
+                                    <path d="M12 13c0 1.105-1.12 2-2.5 2S7 14.105 7 13s1.12-2 2.5-2 2.5.895 2.5 2z" />
+                                    <path fill-rule="evenodd" d="M12 3v10h-1V3h1z" />
+                                    <path d="M11 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 16 2.22V4l-5 1V2.82z" />
+                                    <path fill-rule="evenodd"
+                                        d="M0 11.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 7H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 3H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5z" />
+                                </svg>
+                            </div>
+                            <div class='gian-cach'
+                                style="background-color: rgb(65, 121, 225);width: 50px;height: 50px;border-radius: 10px;">
+                            </div>
+                            <div class="gian-cach">
+                                <span><b>Hương</b></span><br>
+                                <span>Văn Mai Hương</span>
+                            </div>
                         </div>
-                        <div class='gian-cach'
-                            style="background-color: rgb(65, 121, 225);width: 50px;height: 50px;border-radius: 10px;">
+                        <div class="col-md-2">
+                            <div>
+                                <span>03:35</span>
+                            </div>
                         </div>
-                        <div class="gian-cach">
-                            <span><b>Mùi hương em nồng say</b></span><br>
-                            <span>Văn Mai Hương</span>
-                        </div>
-                        <div style="margin-left: 20%;">
-                            <span>03:35</span>
+                        <div class="col-md-2">
+                            <span class="material-icons-outlined" style="z-index: 1;" onclick="alert('hello')">library_add</span>
                         </div>
                     </div>
 
-                    <div class="gian-cach radius-border flex-doc background-change like"
+
+                    <div
+                        class=" row no-gutters gian-cach radius-border flex-doc background-change like"
                         style="width: 98%;height: 70px;">
-                        <div class="gian-cach" style="color: rgb(255,255,255,0.8);">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor"
-                                class="bi bi-music-note-list" viewBox="0 0 16 16">
-                                <path d="M12 13c0 1.105-1.12 2-2.5 2S7 14.105 7 13s1.12-2 2.5-2 2.5.895 2.5 2z" />
-                                <path fill-rule="evenodd" d="M12 3v10h-1V3h1z" />
-                                <path d="M11 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 16 2.22V4l-5 1V2.82z" />
-                                <path fill-rule="evenodd"
-                                    d="M0 11.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 7H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 3H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5z" />
-                            </svg>
+                        <div class="col-md-8 flex-doc "  id='Forgetmenow' onclick="changeMusic(this.id)">
+                            <div class="gian-cach" style="color: rgb(255,255,255,0.8);">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor"
+                                    class="bi bi-music-note-list" viewBox="0 0 16 16">
+                                    <path d="M12 13c0 1.105-1.12 2-2.5 2S7 14.105 7 13s1.12-2 2.5-2 2.5.895 2.5 2z" />
+                                    <path fill-rule="evenodd" d="M12 3v10h-1V3h1z" />
+                                    <path d="M11 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 16 2.22V4l-5 1V2.82z" />
+                                    <path fill-rule="evenodd"
+                                        d="M0 11.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 7H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 3H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5z" />
+                                </svg>
+                            </div>
+                            <div class='gian-cach'
+                                style="background-color: rgb(65, 121, 225);width: 50px;height: 50px;border-radius: 10px;">
+                            </div>
+                            <div class="gian-cach">
+                                <span><b>Forget me now</b></span><br>
+                                <span>Nhật Trường</span>
+                            </div>
                         </div>
-                        <div class='gian-cach'
-                            style="background-color: rgb(65, 121, 225);width: 50px;height: 50px;border-radius: 10px;">
+                        <div class="col-md-2">
+                            <div>
+                                <span>03:35</span>
+                            </div>
                         </div>
-                        <div class="gian-cach">
-                            <span><b>Mùi hương em nồng say</b></span><br>
-                            <span>Văn Mai Hương</span>
-                        </div>
-                        <div style="margin-left: 20%;">
-                            <span>03:35</span>
+                        <div class="col-md-2">
+                            <span class="material-icons-outlined" style="z-index: 1;" onclick="alert('hello')">library_add</span>
                         </div>
                     </div>
 
-                    <div class="gian-cach radius-border flex-doc background-change like"
-                        style="width: 98%;height: 70px;">
-                        <div class="gian-cach" style="color: rgb(255,255,255,0.8);">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor"
-                                class="bi bi-music-note-list" viewBox="0 0 16 16">
-                                <path d="M12 13c0 1.105-1.12 2-2.5 2S7 14.105 7 13s1.12-2 2.5-2 2.5.895 2.5 2z" />
-                                <path fill-rule="evenodd" d="M12 3v10h-1V3h1z" />
-                                <path d="M11 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 16 2.22V4l-5 1V2.82z" />
-                                <path fill-rule="evenodd"
-                                    d="M0 11.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 7H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 3H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5z" />
-                            </svg>
-                        </div>
-                        <div class='gian-cach'
-                            style="background-color: rgb(65, 121, 225);width: 50px;height: 50px;border-radius: 10px;">
-                        </div>
-                        <div class="gian-cach">
-                            <span><b>Mùi hương em nồng say</b></span><br>
-                            <span>Văn Mai Hương</span>
-                        </div>
-                        <div style="margin-left: 20%;">
-                            <span>03:35</span>
-                        </div>
-                    </div>
 
-                    <div class="gian-cach radius-border flex-doc background-change like"
-                        style="width: 98%;height: 70px;">
-                        <div class="gian-cach" style="color: rgb(255,255,255,0.8);">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor"
-                                class="bi bi-music-note-list" viewBox="0 0 16 16">
-                                <path d="M12 13c0 1.105-1.12 2-2.5 2S7 14.105 7 13s1.12-2 2.5-2 2.5.895 2.5 2z" />
-                                <path fill-rule="evenodd" d="M12 3v10h-1V3h1z" />
-                                <path d="M11 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 16 2.22V4l-5 1V2.82z" />
-                                <path fill-rule="evenodd"
-                                    d="M0 11.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 7H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 3H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5z" />
-                            </svg>
-                        </div>
-                        <div class='gian-cach'
-                            style="background-color: rgb(65, 121, 225);width: 50px;height: 50px;border-radius: 10px;">
-                        </div>
-                        <div class="gian-cach">
-                            <span><b>Mùi hương em nồng say</b></span><br>
-                            <span>Văn Mai Hương</span>
-                        </div>
-                        <div style="margin-left: 20%;">
-                            <span>03:35</span>
-                        </div>
-                    </div>
-
-                    <div class="gian-cach radius-border flex-doc background-change like"
-                        style="width: 98%;height: 70px;">
-                        <div class="gian-cach" style="color: rgb(255,255,255,0.8);">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor"
-                                class="bi bi-music-note-list" viewBox="0 0 16 16">
-                                <path d="M12 13c0 1.105-1.12 2-2.5 2S7 14.105 7 13s1.12-2 2.5-2 2.5.895 2.5 2z" />
-                                <path fill-rule="evenodd" d="M12 3v10h-1V3h1z" />
-                                <path d="M11 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 16 2.22V4l-5 1V2.82z" />
-                                <path fill-rule="evenodd"
-                                    d="M0 11.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 7H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 3H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5z" />
-                            </svg>
-                        </div>
-                        <div class='gian-cach'
-                            style="background-color: rgb(65, 121, 225);width: 50px;height: 50px;border-radius: 10px;">
-                        </div>
-                        <div class="gian-cach">
-                            <span><b>Mùi hương em nồng say</b></span><br>
-                            <span>Văn Mai Hương</span>
-                        </div>
-                        <div style="margin-left: 20%;">
-                            <span>03:35</span>
-                        </div>
-                    </div>
-
-                    <div class="gian-cach radius-border flex-doc background-change like"
-                        style="width: 98%;height: 70px;">
-                        <div class="gian-cach" style="color: rgb(255,255,255,0.8);">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor"
-                                class="bi bi-music-note-list" viewBox="0 0 16 16">
-                                <path d="M12 13c0 1.105-1.12 2-2.5 2S7 14.105 7 13s1.12-2 2.5-2 2.5.895 2.5 2z" />
-                                <path fill-rule="evenodd" d="M12 3v10h-1V3h1z" />
-                                <path d="M11 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 16 2.22V4l-5 1V2.82z" />
-                                <path fill-rule="evenodd"
-                                    d="M0 11.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 7H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 3H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5z" />
-                            </svg>
-                        </div>
-                        <div class='gian-cach'
-                            style="background-color: rgb(65, 121, 225);width: 50px;height: 50px;border-radius: 10px;">
-                        </div>
-                        <div class="gian-cach">
-                            <span><b>Mùi hương em nồng say</b></span><br>
-                            <span>Văn Mai Hương</span>
-                        </div>
-                        <div style="margin-left: 20%;">
-                            <span>03:35</span>
-                        </div>
-                    </div>
-
-                    <div class="gian-cach radius-border flex-doc background-change like"
-                        style="width: 98%;height: 70px;">
-                        <div class="gian-cach" style="color: rgb(255,255,255,0.8);">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor"
-                                class="bi bi-music-note-list" viewBox="0 0 16 16">
-                                <path d="M12 13c0 1.105-1.12 2-2.5 2S7 14.105 7 13s1.12-2 2.5-2 2.5.895 2.5 2z" />
-                                <path fill-rule="evenodd" d="M12 3v10h-1V3h1z" />
-                                <path d="M11 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 16 2.22V4l-5 1V2.82z" />
-                                <path fill-rule="evenodd"
-                                    d="M0 11.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 7H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 3H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5z" />
-                            </svg>
-                        </div>
-                        <div class='gian-cach'
-                            style="background-color: rgb(65, 121, 225);width: 50px;height: 50px;border-radius: 10px;">
-                        </div>
-                        <div class="gian-cach">
-                            <span><b>Mùi hương em nồng say</b></span><br>
-                            <span>Văn Mai Hương</span>
-                        </div>
-                        <div style="margin-left: 20%;">
-                            <span>03:35</span>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -300,9 +200,11 @@
     <div style="height: 20vh;">
 
     </div>
-
+    <audio id="music-run" src="music/Forgetmenow.mp3" style="width:100%"></audio>
     <div class="bottom-fixed row" style="border-radius: 20px 20px 0px 0px;width: 90%;">
-        <div class="col-md-3 flex-doc flex-ngang">
+
+        
+        <div id='phatnhac' class="col-md-3 flex-doc flex-ngang">
             <div style="background-color: rgb(65, 116, 225);height: 50px;width: 50px;border-radius: 50%;"></div>
             <div class="gian-cach">
                 <span><b>Forget Me Now</b></span><br>
@@ -313,18 +215,18 @@
             <div style="margin-top:10px;" class="flex-doc flex-ngang">
                 <div class="gian-cach phongto like">
                     <span class="material-icons-outlined">playlist_add</span>
-                </div> 
+                </div>
                 <div class="flex-ngang flex-doc vongtron gian-cach phongto">
                     <span id='icon_play' class="material-icons-outlined like" onclick="play()">play_arrow</span>
-                </div> 
+                </div>
                 <div class="gian-cach phongto like">
                     <span class="material-icons-outlined">repeat</span>
-                </div> 
+                </div>
             </div>
             <div>
                 <div class='can-giua flex-ngang flex-doc' style="width:100%;">
                     <span id='time_current'>00:00</span>
-                    <input id='time_line' class="range-control" type="range" min="0" max='100' step="1">
+                    <input id='time_line' class="range-control" value="0" type="range" min="0" max='100' step="1">
                     <span id='time_duration'>00:00</span>
                 </div>
             </div>
@@ -337,106 +239,125 @@
                 <input id='volume' class="range-control" type="range" max="100" />
             </div>
         </div>
-        
-    </div>
-    <script>
-        var change = true;
-        var turnoff = true;
-        var old_volume = 0;
-        var music = document.getElementById("music-run");
-        var icon_play = document.getElementById("icon_play");
-        var time_line = document.getElementById('time_line');
-        var time_duration = document.getElementById('time_duration');
-        var time_current = document.getElementById('time_current');
-        var volume = document.getElementById('volume');
-        var volume_btn = document.getElementById('volume_btn');
-        var i = 0;
-        timeline();
-        function play() {
-            if (change == true) {
-                icon_play.innerHTML = "pause";
-                music.play();
-                time_duration.innerHTML =changeTime(Math.round(music.duration));
-                change = false;
-            }
-            else {
-                icon_play.innerHTML = "play_arrow";
-                music.pause();
+        <script>
+            var change = true;
+            var turnoff = true;
+            var old_volume = 0;
+            var music = document.getElementById("music-run");
+            var icon_play = document.getElementById("icon_play");
+            var time_line = document.getElementById('time_line');
+            var time_duration = document.getElementById('time_duration');
+            var time_current = document.getElementById('time_current');
+            var volume = document.getElementById('volume');
+            var volume_btn = document.getElementById('volume_btn');
+            var i = 0;
+            timeline();
+            async function changeMusic(name){
+                music.src = "music/"+name+".mp3";
                 change = true;
+                await sleep(500);
+                play();
+                getMusic(name);
             }
-        }
-
-        async function timeline(){
-            while(true)
-            {
-                await sleep(1000);
-                time_line.addEventListener('click',function(){
-                    setCurTime(time_line.value);
-                });
-                volume.addEventListener('click',function(){
-                    setVolume(volume.value);
-                });
-                time_current.innerHTML = changeTime(Math.round(music.currentTime));
-                time_line.value = Math.floor((Math.floor(music.currentTime)/Math.floor(music.duration))*100);
-            }
-        }
-        function turnoff_music(){
-            if(turnoff==true)
-            {
-                volume_btn.innerHTML ="volume_off";
-                old_volume = volume.value;
-                setVolume(0);
-                turnoff=false;
-            }
-            else
-            {
-                volume_btn.innerHTML ="volume_up";
-                setVolume(old_volume);
-                turnoff=true;
-            }
-        }
-        document.addEventListener('keydown', function (event) {
-            if (event.keyCode === 32) 
-            {
-                if (change == true) 
-                {
+            function play() {
+                if (change == true) {
                     icon_play.innerHTML = "pause";
                     music.play();
                     time_duration.innerHTML =changeTime(Math.round(music.duration));
                     change = false;
                 }
-                else 
-                {
+                else {
                     icon_play.innerHTML = "play_arrow";
                     music.pause();
                     change = true;
                 }
             }
-        });
-        window.addEventListener('keydown', function(e) {
-            if(e.keyCode == 32 && e.target == document.body) {
-                e.preventDefault();
+    
+            async function timeline(){
+                while(true)
+                {
+                    await sleep(1000);
+                    time_line.addEventListener('click',function(){
+                        setCurTime(time_line.value);
+                    });
+                    volume.addEventListener('click',function(){
+                        setVolume(volume.value);
+                    });
+                    time_current.innerHTML = changeTime(Math.round(music.currentTime));
+                    time_line.value = Math.floor((Math.floor(music.currentTime)/Math.floor(music.duration))*100);
+                }
             }
+            function turnoff_music(){
+                if(turnoff==true)
+                {
+                    volume_btn.innerHTML ="volume_off";
+                    music.muted = true;
+                    turnoff=false;
+                }
+                else
+                {
+                    volume_btn.innerHTML ="volume_up";
+                    music.muted = false;
+                    turnoff=true;
+                }
+            }
+            document.addEventListener('keydown', function (event) {
+                if (event.keyCode === 32) 
+                {
+                    if (change == true) 
+                    {
+                        icon_play.innerHTML = "pause";
+                        music.play();
+                        time_duration.innerHTML =changeTime(Math.round(music.duration));
+                        change = false;
+                    }
+                    else 
+                    {
+                        icon_play.innerHTML = "play_arrow";
+                        music.pause();
+                        change = true;
+                    }
+                }
             });
-        function setCurTime(time) { 
-            music.currentTime=Math.floor((time*Math.floor(music.duration))/100);
-        }
-        function setVolume(value){
-            music.volume = value/100;
-        } 
-        function sleep(ms) {
-            return new Promise(resolve => setTimeout(resolve, ms));
-        }
-        function changeTime(second){
-            var min = Math.floor(second/60);
-            if(min<10)
-                min = "0"+min;
-            var sec = second - min*60;
-            if(sec<10)
-                sec = "0"+sec;
-            return min + ":" + sec;
+            window.addEventListener('keydown', function(e) {
+                if(e.keyCode == 32 && e.target == document.body) {
+                    e.preventDefault();
+                }
+                });
+            function setCurTime(time) { 
+                music.currentTime=Math.floor((time*Math.floor(music.duration))/100);
+            }
+            function setVolume(value){
+                music.volume = value/100;
+            } 
+            function sleep(ms) {
+                return new Promise(resolve => setTimeout(resolve, ms));
+            }
+            function changeTime(second){
+                var min = Math.floor(second/60);
+                if(min<10)
+                    min = "0"+min;
+                var sec = second - min*60;
+                if(sec<10)
+                    sec = "0"+sec;
+                return min + ":" + sec;
+            }
+        </script>
+    </div>
+    <script>
+        function getMusic(id) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById('phatnhac').innerHTML =
+                        this.responseText;
+                }
+            };
+            xhttp.open('GET', 'xuly.php?id_music=' + id, true);
+            xhttp.send();
         }
     </script>
+
 
 </body>
 
