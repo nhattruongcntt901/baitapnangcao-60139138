@@ -23,6 +23,7 @@
         }
         echo "<b>Câu c. Số lớn nhất trong số $n là $max</b><br>";
     }
+    echo "hello world";
     
 
     function lasonguyento($n) {
