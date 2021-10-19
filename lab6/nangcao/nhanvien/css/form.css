@@ -1,0 +1,28 @@
+input{
+    background-color: transparent;
+    border: none;
+}
+.form-outline-black{
+    border: rgba(0, 0, 0, 0.3) solid 2px;
+    padding:5px;
+    border-radius: 10px;
+    margin:8px;
+}
+.form-outline-white{
+    border: white solid 2px;
+    padding:5px;
+    border-radius: 10px;
+}
+.color-black{
+    color: rgba(0, 0, 0, 0.603);
+}
+.form-select{
+    background-color: transparent;
+    outline: none;
+    border:none;
+    color: grey;
+}
+::placeholder {
+    color: rgb(78, 78, 78);
+    font-size: 1em;
+  }
