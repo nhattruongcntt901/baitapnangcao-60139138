@@ -2,5 +2,5 @@
     session_start();
     session_unset();
     
-    header("Location: http://localhost/");
+    header("Location: http://localhost/baitapnhomphp");
 ?>

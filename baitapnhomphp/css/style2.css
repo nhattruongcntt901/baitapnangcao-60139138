@@ -44,6 +44,9 @@ dialog{
     outline: none;
     border-radius: 5px;
 }
+img{
+  object-fit: cover;
+}
 .post{
   border: none;
   outline: none;
@@ -57,7 +60,7 @@ dialog{
   background-color: rgba(255, 255, 255, 0.5); 
   z-index: -1;
 } 
-.dialog-table1 {
+/* .dialog-table1 {
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   background-color: rgba(255, 255, 255, 0.5);
@@ -68,7 +71,7 @@ dialog{
   backdrop-filter: blur(10px);
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 10px;  
-}
+} */
 
 .binhluan{
   border: none;
@@ -169,7 +172,7 @@ div.b {
   border-radius: 20px;
   width: 80%;
   margin-left: 10px;
-  color: rgb(66, 65, 107);
+  color: rgba(255, 255, 255, 0.8);
   font-family: Lato-Heavy;
 }
 .form-in::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -182,7 +185,7 @@ div.b {
   margin-top: 10px;
   margin-bottom: 10px;
   border-radius: 20px;
-  color: rgb(66, 65, 107);
+  color: rgba(255, 255, 255, 0.8);
   font-family: Lato-Heavy;
   margin-left: 10px;
 }
@@ -209,7 +212,7 @@ input[type=number] {
   color: rgb(255, 255, 255,0.6);
 }
 option{
-  color: rgba(114, 124, 182, 0.6);
+  color: rgba(0, 0, 0, 0.6);
 }
 .xacnhanmail{
   width:200px;

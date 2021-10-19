@@ -73,7 +73,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="dashboard_table_song.html">
+                <a class="nav-link" href="dashboard_table_song.php">
                     <i class="fas fa-music"></i>
                     <span>Table Nhạc</span></a>
             </li>
@@ -138,20 +138,24 @@
 
                     <form action="../chucnang/add_song.php" method="post" enctype="multipart/form-data">
                         <div class="form-group">
-                            <label>Tiêu đề nhạc</label>
+                            <label>Tiêu đề nhạc*</label>
                             <input type="text" name="title" class="form-control" placeholder="Tiêu đề" autofocus required>
                         </div>
                         <div class="form-group">
                             <label>Lời bài hát</label>
                             <textarea name="loi" id="" rows="2" class="form-control"
-                                placeholder="Lời bài hát" required></textarea>
+                                placeholder="Lời bài hát"></textarea>
                         </div>
                         <div class="form-group">
-                            <label>Upload nhạc</label>
+                            <label>Upload nhạc*</label>
                             <input type="file" name="upload_nhac" required>
                         </div>
                         <div class="form-group">
-                            <label>Ca sĩ</label>
+                            <label>Upload ảnh đại diện nhạc</label>
+                            <input type="file" name="upload_anh" accept="image/*">
+                        </div>
+                        <div class="form-group">
+                            <label>Ca sĩ*</label>
                             <textarea name="singer" id="" rows="2" class="form-control" placeholder="Ca sĩ" required></textarea>
                         </div>
                         <input type="submit" class="btn btn-success btn-block" value="Save Nhạc">
