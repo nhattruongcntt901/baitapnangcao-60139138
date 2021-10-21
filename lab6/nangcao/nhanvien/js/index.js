@@ -41,123 +41,29 @@ function submit_them_phongban() {
     xhr.send(data);
     return false;
 }
-
-var danhsach_nv = document.getElementById('ds_nv');
-var them_nv = document.getElementById('them_nv');
-var tracuu_nv = document.getElementById('tracuu_nv');
-var loai_nv = document.getElementById('ds_loainv');
-var phong_ban = document.getElementById('ds_phongban');
-first_load();
-async function first_load(){
-    document.getElementById('content').innerHTML = "<div style='height:85vh' class='flex-ngang flex-doc'><div class='lds-ring'><div></div><div></div><div></div><div></div></div></div>";
-    await sleep(1000);
-    danhsach(); 
-}
-
-var time = 1000;
-function loading(){
-    document.getElementById('content').innerHTML = "<div style='height:85vh' class='flex-ngang flex-doc'><div class='lds-ring'><div></div><div></div><div></div><div></div></div></div>";
-}
 // chuyển trang danh sách
-async function danhsach() {
-    danhsach_nv.classList.add("clicked");
-    them_nv.classList.remove("clicked");
-    tracuu_nv.classList.remove("clicked");
-    loai_nv.classList.remove("clicked");
-    phong_ban.classList.remove("clicked");
-    loading();
-    await sleep(time);
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            document.getElementById('content').innerHTML =
-                this.responseText;
-        }
-    };
-    xhttp.open('GET', 'page/danhsach_nv.php', true);
-    xhttp.send();
-
+function danhsach() {
+    window.location = "http://localhost/baitap/lab6/nangcao/nhanvien/page/danhsach_nv.php?page=1"
 }
 
 // Chuyển trang thêm
-async function them() {
-    danhsach_nv.classList.remove("clicked");
-    them_nv.classList.add("clicked");
-    tracuu_nv.classList.remove("clicked");
-    loai_nv.classList.remove("clicked");
-    phong_ban.classList.remove("clicked");
-    loading();
-    await sleep(time);
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            document.getElementById('content').innerHTML =
-                this.responseText;
-        }
-    };
-    xhttp.open('GET', 'page/them_nv.php', true);
-    xhttp.send();
-
+function them() {
+    window.location = "http://localhost/baitap/lab6/nangcao/nhanvien/page/them_nv.php";
 }
 
 //chuyển trang loại nhân viên
-async function loainv() {
-    danhsach_nv.classList.remove("clicked");
-    them_nv.classList.remove("clicked");
-    tracuu_nv.classList.remove("clicked");
-    loai_nv.classList.add("clicked");
-    phong_ban.classList.remove("clicked");
-    loading();
-    await sleep(time);
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            document.getElementById('content').innerHTML =
-                this.responseText;
-        }
-    };
-    xhttp.open('GET', 'page/ds_loainv.php', true);
-    xhttp.send();
+function loainv() {
+    window.location = "http://localhost/baitap/lab6/nangcao/nhanvien/page/ds_loanv.php";
 
 }
 //chuyển trang phòng ban
-async function phongban() {
-    danhsach_nv.classList.remove("clicked");
-    them_nv.classList.remove("clicked");
-    tracuu_nv.classList.remove("clicked");
-    loai_nv.classList.remove("clicked");
-    phong_ban.classList.add("clicked");
-    loading();
-    await sleep(time);
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            document.getElementById('content').innerHTML =
-                this.responseText;
-        }
-    };
-    xhttp.open('GET', 'page/ds_phongban.php', true);
-    xhttp.send();
+function phongban() {
+    window.location = "http://localhost/baitap/lab6/nangcao/nhanvien/page/ds_phongban.php";
 
 }
 //chuyển trang tra cứu
-async function tracuu() {
-    danhsach_nv.classList.remove("clicked");
-    them_nv.classList.remove("clicked");
-    tracuu_nv.classList.add("clicked");
-    loai_nv.classList.remove("clicked");
-    phong_ban.classList.remove("clicked");
-    loading();
-    await sleep(time);
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            document.getElementById('content').innerHTML =
-                this.responseText;
-        }
-    };
-    xhttp.open('GET', 'page/tracuu_nv.php', true);
-    xhttp.send();
+function tracuu() {
+    window.location = "http://localhost/baitap/lab6/nangcao/nhanvien/page/tracuu_nv.php";
 
 }
 //Thông báo sau khi thêm nhân viên

@@ -23,7 +23,8 @@ include("include/ketnoi.php");
         $sql = "SELECT name_user FROM user WHERE id_user = $id_user";
         $ketqua = mysqli_query($ketnoi,$sql);
         $row = mysqli_fetch_assoc($ketqua);
-        $name_user = $row['name_user']; 
+        $name_user = $row['name_user'];
+        header("Location: page/danhsach_nv.php?page=1"); 
     }
 ?>
 
@@ -175,5 +176,5 @@ include("include/ketnoi.php");
     </footer>
     <!-- content end -->
 </body>
-<script src="js/index.js"></script>
+
 </html>

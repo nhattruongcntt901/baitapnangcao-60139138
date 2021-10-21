@@ -17,8 +17,8 @@ if(isset($_POST['taikhoan']) && isset($_POST['matkhau']))
 		{
             if($row['name_user'] == $taikhoan && $row['pass_user'] == $matkhau)
             {
-                setcookie('id_user',$row['id_user'],time()+120,"/");
-                // $_SESSION['id_user'] = $row['id_user'];
+                // setcookie('id_user',$row['id_user'],time()+120,"/");
+                $_SESSION['id_user'] = $row['id_user'];
                 echo "<script>
                                     window.location = '$tenmien';
                                 </script>";
