@@ -250,14 +250,29 @@ function tim_kiem(){
     xhttp.open('GET', '../chucnang/timkiem.php?tukhoa=' + tu_khoa, true);
     xhttp.send();
 }
+var old_id_playlist = [];
 function add_to_playlist(id){
-    open_thongbao();
-    document.getElementById(id).innerHTML="";
-
+    var flag =true;
     var id_nhac = id.substring(5);
-    var xhttp = new XMLHttpRequest();
-    xhttp.open('GET', 'http://localhost/baitapnhomphp/chucnang/add_to_playlist.php?id_nhac=' + id_nhac , true);
-    xhttp.send();
+    for(var i =0;i<old_id_playlist.length;i++)
+    {console.log(old_id_playlist[i]);
+        if(old_id_playlist[i]==id_nhac)
+        {
+            flag = false;
+        }
+    }
+    if(flag==true)
+    {
+        open_thongbao();
+        old_id_playlist.push(id_nhac);
+        document.getElementById(id).classList.remove("material-icons-outlined");
+        document.getElementById(id).classList.add("font-lato-heavy");
+        document.getElementById(id).innerHTML="Đã Thêm";
+        var xhttp = new XMLHttpRequest();
+        xhttp.open('GET', 'http://localhost/baitapnhomphp/chucnang/add_to_playlist.php?id_nhac=' + id_nhac , true);
+        xhttp.send();
+    }
+    
 }
 
 //Thông báo sau khi thêm playlist

@@ -18,7 +18,7 @@ if(isset($_POST['taikhoan']) && isset($_POST['matkhau']))
             if($row['name_user'] == $taikhoan && $row['pass_user'] == $matkhau)
             {
                 $_SESSION['id_user'] = $row['id_user'];
-                $_SESSION['hoten'] = $row['hoten_user'];
+                $_SESSION['hoten']  = $row['hoten_user'];
                 $_SESSION['anh_user'] = $row['anh_user'];
                 echo "<script>
                                     window.location = '$tenmien';
@@ -31,7 +31,7 @@ if(isset($_POST['taikhoan']) && isset($_POST['matkhau']))
         if ($dk == false)
         {
             echo "<script> alert('Sai mật khẩu hoặc tài khoản');
-                                window.location = '$tenmien';
+                                window.location = '$tenmien/login';
                             </script>";
         }
     }

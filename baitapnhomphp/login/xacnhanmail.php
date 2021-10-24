@@ -100,11 +100,11 @@ ob_start();
         else
             header("Location: $tenmien");
     }
-    function guimail($tennguoinhan,$emailnguoinhan,$maso){
+function guimail($tennguoinhan,$emailnguoinhan,$maso){
         include('PHPMailer-5.2.26/class.smtp.php');
         include "PHPMailer-5.2.26/class.phpmailer.php"; 
         $nFrom = "TT MP3 mã Xác Nhận tài khoản";    //mail duoc gui tu dau, thuong de ten cong ty ban
-        $mFrom = 'truong.nhn.60cntt@ntu.edu.vn';  //dia chi email cua ban 
+        $mFrom = 'guimailxacnhan@gmail.com';  //dia chi email cua ban 
         $mPass = 'nhattruong123';       //mat khau email cua ban
         $nTo = $tennguoinhan; //Ten nguoi nhan
         $mTo = $emailnguoinhan;   //dia chi nhan mail
@@ -114,7 +114,7 @@ ob_start();
         <div style='background-color: #696a91;width:100%;height:300px;border-radius:10px;'>
             <div style='display: flex !important;align-items: center !important;'>
             <div style='margin-left:auto;margin-right: auto;'>
-                <h2 align='center' style='color:white'>MÃ XÁC NHẬN MAIL TỪ TT SOCIAL</h2>
+                <h2 align='center' style='color:white'>MÃ XÁC NHẬN MAIL TỪ TT Music</h2>
                 <p align='center' style='font-size:25px;padding: 20px;background-color:white'><b>$maso</b></p>
                 <img src='https://i.imgur.com/gvsxwOj.png' height='100' width='100%' style='object-fit: cover;' />
             </div>
@@ -134,7 +134,7 @@ ob_start();
         $mail->Username   = $mFrom;  // khai bao dia chi email
         $mail->Password   = $mPass;              // khai bao mat khau
         $mail->SetFrom($mFrom, $nFrom);
-        $mail->AddReplyTo('truong.nhn.60cntt@ntu.edu.vn', 'quanlyduan901.000webhostapp.com'); //khi nguoi dung phan hoi se duoc gui den email nay
+        $mail->AddReplyTo('guimailxacnhan@gmail.com', 'quanlyduan901.000webhostapp.com'); //khi nguoi dung phan hoi se duoc gui den email nay
         $mail->Subject    = $title;// tieu de email 
         $mail->MsgHTML($body);// noi dung chinh cua mail se nam o day.
         $mail->AddAddress($mTo, $nTo);
@@ -200,22 +200,26 @@ ob_start();
 </head>
 
 <body>
-<div class='flex-ngang animate__animated animate__zoomInUp'>
+    <div class='flex-ngang animate__animated animate__zoomInUp'>
 
-<form style='margin-top:30vh;width:500px' action='xulydangki.php' method='POST'>
-<p style='color:red'><?php if(isset($_COOKIE['tbsai']))
+        <form style='margin-top:30vh;width:500px' action='xulydangki.php' method='POST'>
+            <p style='color:red'><?php if(isset($_COOKIE['tbsai']))
                 echo $_COOKIE['tbsai']; ?></p>
-    <p align='center'><i style='color:rgb(255,255,255,0.6);font-size:14px'>*Vào email <?php echo '<b>'.$_COOKIE['email']."</b>" ?> đã đăng ký để lấy mã xác minh quá 120s thì phải tạo mới</i></p>
-    <div class='flex-ngang'>
-    <input type='text' style='background-color:rgb(255,255,255,0.5);border:none' maxlength="6" class='form-control xacnhanmail' id='nhapma' name="nhapma" placeholder="Nhập mã"
-        required />
+            <p align='center'><i style='color:rgb(255,255,255,0.6);font-size:14px'>*Vào email
+                    <?php echo '<b>'.$_COOKIE['email']."</b>" ?> đã đăng ký để lấy mã xác minh quá 120s thì phải tạo
+                    mới</i></p>
+            <div class='flex-ngang'>
+                <input type='text' style='background-color:rgb(255,255,255,0.5);border:none' maxlength="6"
+                    class='form-control xacnhanmail' id='nhapma' name="nhapma" placeholder="Nhập mã" required />
+            </div>
+
+            <div class='flex-ngang'>
+                <button class='btn w-75' style='margin-top:30px;background-color:rgb(159, 157, 226);color:white'>Xác
+                    nhận</button>
+
+            </div>
+        </form>
     </div>
-    
-    <div class='flex-ngang'>
-        <button class='btn w-75' style='margin-top:30px;background-color:rgb(159, 157, 226);color:white'>Xác nhận</button>
-        
-    </div>
-</form>
-</div>
 </body>
+
 </html>

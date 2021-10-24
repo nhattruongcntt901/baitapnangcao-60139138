@@ -50,7 +50,7 @@ if(isset($_GET['tracuu'])||isset($_SESSION['tracuu']))
             $sql_sodong = "SELECT * FROM nhanvien a,loai_nv b,phongban c WHERE a.id_loainv=b.id_loainv and a.id_phong = c.id_phong and CONCAT_WS(' ',ho_nv, ten_nv) like '%$tu_khoa%' and a.id_phong like '%$id_phongban%' and a.id_loainv like '%$id_loainv%' ORDER BY id_nv DESC";
             $ketqua_sodong = mysqli_query($ketnoi, $sql_sodong);
             $sodong = mysqli_num_rows($ketqua_sodong);
-            $page = round($sodong / $rowsPerPage);
+            $page = ceil($sodong / $rowsPerPage);
         }
         else
         {
@@ -59,7 +59,7 @@ if(isset($_GET['tracuu'])||isset($_SESSION['tracuu']))
             $sql_sodong = "SELECT * FROM nhanvien a,loai_nv b,phongban c WHERE a.id_loainv=b.id_loainv and a.id_phong = c.id_phong ORDER BY id_nv DESC";
             $ketqua_sodong = mysqli_query($ketnoi, $sql_sodong);
             $sodong = mysqli_num_rows($ketqua_sodong);
-            $page = round($sodong / $rowsPerPage);
+            $page = ceil($sodong / $rowsPerPage);
         }
     }
     else
@@ -70,7 +70,7 @@ if(isset($_GET['tracuu'])||isset($_SESSION['tracuu']))
         $sql_sodong = "SELECT * FROM nhanvien a,loai_nv b,phongban c WHERE a.id_loainv=b.id_loainv and a.id_phong = c.id_phong ORDER BY id_nv DESC";
         $ketqua_sodong = mysqli_query($ketnoi, $sql_sodong);
         $sodong = mysqli_num_rows($ketqua_sodong);
-        $page = round($sodong / $rowsPerPage);
+        $page = ceil($sodong / $rowsPerPage);
     }
 }
 else
@@ -81,7 +81,7 @@ else
     $sql_sodong = "SELECT * FROM nhanvien a,loai_nv b,phongban c WHERE a.id_loainv=b.id_loainv and a.id_phong = c.id_phong ORDER BY id_nv DESC";
     $ketqua_sodong = mysqli_query($ketnoi, $sql_sodong);
     $sodong = mysqli_num_rows($ketqua_sodong);
-    $page = round($sodong / $rowsPerPage);
+    $page = ceil($sodong / $rowsPerPage);
 }
 
 ?>

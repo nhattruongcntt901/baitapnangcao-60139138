@@ -2,6 +2,8 @@
 session_start();
 include("../include/head.php");
 include("../include/ketnoi.php");
+if(!isset($_SESSION['id_user']))
+    header("Location: http://localhost/baitapnhomphp");
 $id_user = $_SESSION['id_user'];
 $sql = "SELECT * FROM user WHERE id_user = $id_user";
 $ketqua = mysqli_query($ketnoi, $sql);
@@ -144,7 +146,7 @@ else
             </div>
         </div>
         <div class="col-md-6 d-none d-md-block">
-            <form class="flex-ngang">
+            <!-- <form class="flex-ngang">
                 <div>
                     <div class='form-outline'>
                         <div class="flex-doc" style="margin-left: 20px;">
@@ -159,7 +161,7 @@ else
                         </div>
                     </div>
                 </div>
-            </form>
+            </form> -->
         </div>
 
         <div class="col-md-3 col-6 flex-doc">
@@ -251,7 +253,7 @@ else
     <audio id="music-run" src="../music/Trí Dũng-Forget Me Now.mp3" style="width:100%"></audio>
     <div id='bottomfixed' class="bottom-fixed show" style='z-index: 102;'>
         <div onclick="bottom_show()"
-            style="position: fixed;top: -5vh;left:5%;background-color: rgb(28, 40, 65);height:40px" class="like btn">
+            style="position: fixed;top: -5vh;left:15.5%;background-color: rgb(28, 40, 65);height:40px" class="like btn">
             <span id='arrow' class="material-icons-outlined">expand_more</span></div>
         <div class="row">
             <div class="col-md-3 d-none d-md-block">

@@ -118,7 +118,7 @@ if (isset($_SESSION['id_user'])) {
                 <?php
                 if (!isset($_SESSION['id_user'])) {
                 ?>
-                    <a href="login/"><button class="btn gian-cach">Đăng nhập</button></a>
+                    <a href="../login/"><button class="btn gian-cach">Đăng nhập</button></a>
                     <span class="material-icons" style="font-size: 2em;margin-right:10px">account_circle</span>
                 <?php
                 } else {
@@ -231,7 +231,7 @@ if (isset($_SESSION['id_user'])) {
 
     <audio id="music-run" src="../music/Trí Dũng-Forget Me Now.mp3" style="width:100%"></audio>
     <div id='bottomfixed' class="bottom-fixed show" style='z-index: 102;'>
-        <div onclick="bottom_show()" style="position: fixed;top: -5vh;left:5%;background-color: rgb(28, 40, 65);height:40px" class="like btn">
+        <div onclick="bottom_show()" style="position: fixed;top: -5vh;left:15.5%;background-color: rgb(28, 40, 65);height:40px" class="like btn">
             <span id='arrow' class="material-icons-outlined">expand_more</span>
         </div>
         <div class="row">
