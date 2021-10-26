@@ -15,7 +15,7 @@ $row = mysqli_fetch_assoc($ketqua);
     $email      = $row['email_user'];
     $sdt        = $row['sdt_user'];
     $anh        = $row['anh_user'];
-
+    $pass       = $row['pass_user'];
 if ($gioitinh == 0)
     $gioitinh = "Nam";
 else if ($gioitinh == 1)
@@ -72,6 +72,14 @@ else
                         <div style="margin-left:20px;" class="flex-doc">
                             <span class="material-icons-outlined">date_range</span>
                             <input value="<?php echo $ngaysinh;?>" class="form-in" style="color:white" type="text" id='ngaysinh' autocomplete="off" name="ngaysinh" placeholder="Ngày sinh" onfocus="(this.type='date')" required/>
+                        </div>
+                    </div>
+                </div>
+                <div class='row flex-ngang'>
+                    <div class='form-outline col-md-5'>
+                        <div style="margin-left:20px;" class="flex-doc">
+                            <span class="material-icons-outlined">lock</span>
+                            <input value="<?php echo $pass;?>" class="form-in" style="color:white" type="text" id='ngaysinh' autocomplete="off" name="matkhau" placeholder="Mật Khẩu" required/>
                         </div>
                     </div>
                 </div>

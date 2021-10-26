@@ -50,28 +50,35 @@
                     <!-- Page Heading -->
                     <div style='width:100%'>
                         <span class="h3 mb-4 text-gray-800">Danh sách nhạc</span>
-                        <div style='float:right'><span style='padding-right:20px;color:black'><b>Chào,<?php echo $_SESSION['username']; ?></b></span><a href="../chucnang/xuly_logout_admin.php"><button class='btn btn-warning'>Đăng Xuất</button></a></div>
-                        
+                        <div style='float:right'><span
+                                style='padding-right:20px;color:black'><b>Chào,<?php echo $_SESSION['username']; ?></b></span><a
+                                href="../chucnang/xuly_logout_admin.php"><button class='btn btn-warning'>Đăng
+                                    Xuất</button></a></div>
+
                     </div>
-                    
+
                 </nav>
                 <!-- End of Topbar -->
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                <div class='flex-ngang'>
+                    <div class='flex-ngang'>
                         <?php if ($page_hientai != 1) { ?>
                         <!-- Trang đầu -->
                         <a style='padding:10px;<?php echo "color:black"; ?>'
-                            href="http://localhost/baitapnhomphp/admin/index.php?page=1"><span class="material-icons">arrow_back_ios</span></a>
+                            href="http://localhost/baitapnhomphp/admin/index.php?page=1"><span
+                                class="material-icons">arrow_back_ios</span></a>
                         <!-- Trang trước -->
 
                         <a style='padding:10px;<?php echo "color:black"; ?>'
-                            href="http://localhost/baitapnhomphp/admin/index.php?page=<?php echo $page_hientai - 1; ?>"><span class="material-icons">chevron_left</span></a>
+                            href="http://localhost/baitapnhomphp/admin/index.php?page=<?php echo $page_hientai - 1; ?>"><span
+                                class="material-icons">chevron_left</span></a>
                         <?php }else{ ?>
-                        <a style='padding:10px;<?php echo "color:black"; ?>'><span class="material-icons">arrow_back_ios</span></a>
+                        <a style='padding:10px;<?php echo "color:black"; ?>'><span
+                                class="material-icons">arrow_back_ios</span></a>
                         <!-- Trang trước -->
 
-                        <a style='padding:10px;<?php echo "color:black"; ?>'><span class="material-icons">chevron_left</span></a>
+                        <a style='padding:10px;<?php echo "color:black"; ?>'><span
+                                class="material-icons">chevron_left</span></a>
                         <?php } ?>
 
                         <!-- Các trang thành phần -->
@@ -89,80 +96,82 @@
                         <!-- Trang sau -->
                         <?php if ($page_hientai != $page) { ?>
                         <a style='padding:10px;<?php echo "color:black"; ?>'
-                            href="http://localhost/baitapnhomphp/admin/index.php?page=<?php echo $page_hientai + 1; ?>"><span class="material-icons">navigate_next</span></a>
+                            href="http://localhost/baitapnhomphp/admin/index.php?page=<?php echo $page_hientai + 1; ?>"><span
+                                class="material-icons">navigate_next</span></a>
 
 
                         <!-- Trang cuối    -->
                         <a style='padding:10px;<?php echo "color:black"; ?>'
-                            href="http://localhost/baitapnhomphp/admin/index.php?page=<?php echo $page; ?>"><span class="material-icons">arrow_forward_ios</span></a>
+                            href="http://localhost/baitapnhomphp/admin/index.php?page=<?php echo $page; ?>"><span
+                                class="material-icons">arrow_forward_ios</span></a>
                         <?php }else{ ?>
-                        <a style='padding:10px;<?php echo "color:black"; ?>'><span class="material-icons">navigate_next</span></a>
+                        <a style='padding:10px;<?php echo "color:black"; ?>'><span
+                                class="material-icons">navigate_next</span></a>
 
 
                         <!-- Trang cuối    -->
-                        <a style='padding:10px;<?php echo "color:black"; ?>'><span class="material-icons">arrow_forward_ios</span></a>
+                        <a style='padding:10px;<?php echo "color:black"; ?>'><span
+                                class="material-icons">arrow_forward_ios</span></a>
                         <?php } ?>
                     </div>
                 </div>
-                    <table class="table table-striped table-bordered">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Tiêu đề</th>
-                                <th>Lời bài hát</th>
-                                <th>Ca Sĩ</th>
-                                <th>Đường dẫn</th>
-                                <th>Ngày upload</th>
-                                <th>Lượt nghe</th>
-                                <th>Sửa</th>
-                                <th>Xoá</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                                            // $sql ="SELECT * FROM nhac ORDER BY id_nhac DESC";
-                                            // $ketqua = mysqli_query($ketnoi,$sql);
-                                            if(mysqli_num_rows($ketqua) > 0)
-                                            {
-                                                while($row = mysqli_fetch_assoc($ketqua))
-                                                {
-                                                    $id         = $row['id_nhac'];
-                                                    $tieude     = $row['tieude'];
-                                                    $loi        = $row['loi'];
-                                                    $casi       = $row['casi'];
-                                                    $tenfile    = $row['tenfile'];
-                                                    $ngayup     = $row['ngay_upload'];
-                                                    $luotnghe   = $row['luotnghe'];
-                                                    echo "
-                                                    <tr>
-                                                        <td>$id</td>
-                                                        <td width='250px'>$tieude</td>
-                                                        <td name='loi_baihat'>$loi</td>
-                                                        <td width='200px'>$casi</td>
-                                                        <td>music/$tenfile</td>
-                                                        <td>$ngayup</td>
-                                                        <td>$luotnghe</td>
-                                                        <td>
-                                                           ";
-                                                       ?>
-                            <a onclick=" return confirm('bạn có chắc muốn sửa không')"
-                                href="edit_song_form.php?id=<?php echo $id ?>" title="sửa"><img src="icon/edit.png"
-                                    width="25px">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tiêu đề</th>
+                            <th>Lời bài hát</th>
+                            <th>Ca Sĩ</th>
+                            <th>Đường dẫn</th>
+                            <th>Ngày upload</th>
+                            <th>Lượt nghe</th>
+                            <th>Sửa</th>
+                            <th>Xoá</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                                if(mysqli_num_rows($ketqua) > 0)
+                                {
+                                    while($row = mysqli_fetch_assoc($ketqua))
+                                    {
+                                        $id         = $row['id_nhac'];
+                                        $tieude     = $row['tieude'];
+                                        $loi        = $row['loi'];
+                                        $casi       = $row['casi'];
+                                        $tenfile    = $row['tenfile'];
+                                        $ngayup     = $row['ngay_upload'];
+                                        $luotnghe   = $row['luotnghe'];
+                                        echo "
+                                        <tr>
+                                            <td>$id</td>
+                                            <td width='250px'>$tieude</td>
+                                            <td name='loi_baihat'>$loi</td>
+                                            <td width='200px'>$casi</td>
+                                            <td>music/$tenfile</td>
+                                            <td>$ngayup</td>
+                                            <td>$luotnghe</td>
+                                            <td>
+                                                ";
+                            ?>
+                        <a onclick=" return confirm('bạn có chắc muốn sửa không')"
+                            href="edit_song_form.php?id=<?php echo $id ?>" title="sửa"><img src="icon/edit.png"
+                                width="25px">
+                        </a>
+                        </td>
+                        <td>
+                            <a onclick=" return confirm('bạn có chắc muốn xóa không') "
+                                href="../chucnang/delete_song.php?id=<?php echo $id; ?>"><img src='icon/delete.jpg'
+                                    width='25px'>
                             </a>
-                            </td>
-                            <td>
-                                <a onclick=" return confirm('bạn có chắc muốn xóa không') "
-                                    href="../chucnang/delete_song.php?id=<?php echo $id; ?>"><img src='icon/delete.jpg'
-                                        width='25px'>
-                                </a>
-                            </td>
-                            </tr>
-                            <?php
+                        </td>
+                        </tr>
+                        <?php
                                                 }
                                             }
                                         ?>
-                        </tbody>
-                    </table>
+                    </tbody>
+                </table>
                 <!-- /.container-fluid -->
             </div>
             <!-- End of Main Content -->
@@ -170,21 +179,20 @@
             <?php  include ('footer.php'); ?>
 </body>
 <script>
-    var content_goc = [];
-    for(var i =0;i<document.getElementsByName('loi_baihat').length;i++)
-        {
-            content_goc.push(document.getElementsByName('loi_baihat')[i].textContent);
-        }
-    function xemthem(i){
-        document.getElementsByName('loi_baihat')[i].textContent = content_goc[i];
-    }
-for(var i =0;i<document.getElementsByName('loi_baihat').length;i++)
-{
-    if(document.getElementsByName('loi_baihat')[i].textContent.length >100)
-    {
-        document.getElementsByName('loi_baihat')[i].textContent = document.getElementsByName('loi_baihat')[i].textContent.substring(0,50) + "...";
+var content_goc = [];
+for (var i = 0; i < document.getElementsByName('loi_baihat').length; i++) {
+    content_goc.push(document.getElementsByName('loi_baihat')[i].textContent);
+}
+
+function xemthem(i) {
+    document.getElementsByName('loi_baihat')[i].textContent = content_goc[i];
+}
+for (var i = 0; i < document.getElementsByName('loi_baihat').length; i++) {
+    if (document.getElementsByName('loi_baihat')[i].textContent.length > 100) {
+        document.getElementsByName('loi_baihat')[i].textContent = document.getElementsByName('loi_baihat')[i]
+            .textContent.substring(0, 50) + "...";
         var div = document.createElement('div');
-        div.innerHTML = "<a style='color:black' onclick='xemthem("+i+")'>Xem Thêm</a>";
+        div.innerHTML = "<a style='color:black' onclick='xemthem(" + i + ")'>Xem Thêm</a>";
         document.getElementsByName('loi_baihat')[i].appendChild(div);
     }
 }

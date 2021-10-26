@@ -16,11 +16,11 @@ if(isset($_POST['title'])&&isset($_POST['loi'])&&isset($_POST['singer']))
     if($loi =="")
         $loi = "Chưa có lời bài hát";
 
-    $thumuc = "../music/";
-    $file_name = $_FILES["upload_nhac"]["name"]; //Tên của file từ máy tính lên web
-    $file_path = $thumuc.$file_name;
-    $file_type = strtolower(pathinfo($file_path, PATHINFO_EXTENSION));
-    $name_form = "upload_nhac"; //name trong form
+    $thumuc     = "../music/";
+    $file_name  = $_FILES["upload_nhac"]["name"]; //Tên của file từ máy tính lên web
+    $file_path  = $thumuc.$file_name;
+    $file_type  = strtolower(pathinfo($file_path, PATHINFO_EXTENSION));
+    $name_form  = "upload_nhac"; //name trong form
     $name_file_music="$singer-$tieude.$file_type"; //tên sau khi đổi và up lên database
 
     $name_file1="$singer-$tieude"; //name file không đuôi để up lên server
@@ -38,9 +38,9 @@ if(isset($_POST['title'])&&isset($_POST['loi'])&&isset($_POST['singer']))
         $name_file1="$singer-$tieude"; //name file không đuôi để up lên server
         upload_image_file($thumuc,$name_form,$name_file1);
 
-        $table = "nhac";
-        $col_name = ['tieude','casi','loi','tenfile','ngay_upload','anh_nhac'];
-        $col_value = ["$tieude","$singer","$loi","$name_file_music","$thoigian","$name_file_anh"];
+        $table      = "nhac";
+        $col_name   = ['tieude','casi','loi','tenfile','ngay_upload','anh_nhac'];
+        $col_value  = ["$tieude","$singer","$loi","$name_file_music","$thoigian","$name_file_anh"];
         insert_table($table,$col_name,$col_value);
         header('Location: ../admin/index.php');
         $_SESSION['message']='<div class="alert alert-success" role="alert">
@@ -49,9 +49,9 @@ if(isset($_POST['title'])&&isset($_POST['loi'])&&isset($_POST['singer']))
     }
     else
     {
-        $table = "nhac";
-        $col_name = ['tieude','casi','loi','tenfile','ngay_upload'];
-        $col_value = ["$tieude","$singer","$loi","$name_file_music","$thoigian"];
+        $table      = "nhac";
+        $col_name   = ['tieude','casi','loi','tenfile','ngay_upload'];
+        $col_value  = ["$tieude","$singer","$loi","$name_file_music","$thoigian"];
         insert_table($table,$col_name,$col_value);
         header('Location: ../admin/index.php');
         $_SESSION['message']='

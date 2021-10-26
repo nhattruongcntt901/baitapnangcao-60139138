@@ -16,11 +16,13 @@
             $sdt        = $_POST['sdt'];
             $ngaysinh   = $_POST['ngaysinh'];
             $gioitinh   = $_POST['gioitinh'];
+            $matkhau    = $_POST['matkhau'];
 
             update_table('user','hoten_user',$hoten,'id_user',$id_user);
             update_table('user','sdt_user',$sdt,'id_user',$id_user);
             update_table('user','ngaysinh_user',$ngaysinh,'id_user',$id_user);
             update_table('user','gioitinh_user',$gioitinh,'id_user',$id_user);
+            update_table('user','pass_user',$matkhau,'id_user',$id_user);
 
             if($_FILES['upload_anh']['name']!="")
             {

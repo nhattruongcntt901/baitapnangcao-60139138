@@ -109,10 +109,10 @@ $page = ceil($sodong / $rowsPerPage);
             <div>
                 <?php if ($page_hientai != 1) { ?>
                     <!-- Trang đầu -->
-                    <a style='padding:10px;<?php echo "color:blue"; ?>' href="http://localhost/baitapnhomphp/admin/dashboard_table_song.php?page=1">Trang Đầu</a>
+                    <a style='padding:10px;<?php echo "color:blue"; ?>' href="http://localhost/baitap/lab6/nhanvien1/page/danhsach_nv.php?page=1">Trang Đầu</a>
                     <!-- Trang trước -->
 
-                    <a style='padding:10px;<?php echo "color:blue"; ?>' href="http://localhost/baitapnhomphp/admin/dashboard_table_song.php?page=<?php echo $page_hientai - 1; ?>">Trang Trước</a>
+                    <a style='padding:10px;<?php echo "color:blue"; ?>' href="http://localhost/baitap/lab6/nhanvien1/page/danhsach_nv.php?page=<?php echo $page_hientai - 1; ?>">Trang Trước</a>
                 <?php } ?>
 
                 <!-- Các trang thành phần -->
@@ -121,18 +121,18 @@ $page = ceil($sodong / $rowsPerPage);
                 ?>
                     <a style='padding:10px;<?php if ($i == $_GET['page']) {
                                                 echo "color:red";
-                                            } else echo "color:blue"; ?>' href="http://localhost/baitapnhomphp/admin/dashboard_table_song.php?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+                                            } else echo "color:blue"; ?>' href="http://localhost/baitap/lab6/nhanvien1/page/danhsach_nv.php?page=<?php echo $i; ?>"><?php echo $i; ?></a>
                 <?php
                 }
                 ?>
 
                 <!-- Trang sau -->
                 <?php if ($page_hientai != $page) { ?>
-                    <a style='padding:10px;<?php echo "color:blue"; ?>' href="http://localhost/baitapnhomphp/admin/dashboard_table_song.php?page=<?php echo $page_hientai + 1; ?>">Trang Sau</a>
+                    <a style='padding:10px;<?php echo "color:blue"; ?>' href="http://localhost/baitap/lab6/nhanvien1/page/danhsach_nv.php?page=<?php echo $page_hientai + 1; ?>">Trang Sau</a>
 
 
                     <!-- Trang cuối    -->
-                    <a style='padding:10px;<?php echo "color:blue"; ?>' href="http://localhost/baitapnhomphp/admin/dashboard_table_song.php?page=<?php echo $page; ?>">Trang Cuối</a>
+                    <a style='padding:10px;<?php echo "color:blue"; ?>' href="http://localhost/baitap/lab6/nhanvien1/page/danhsach_nv.php?page=<?php echo $page; ?>">Trang Cuối</a>
                 <?php } ?>
             </div>
         </div>

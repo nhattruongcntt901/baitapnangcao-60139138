@@ -7,7 +7,6 @@ kiemtra_level_admin(1);
 <?php
 
 $id = $_GET['id'];
-//$row_sql = "SELECT * FROM `nhanvien` WHERE `nhanvien`.`MANV` = $id";
 $sql = "SELECT * FROM `nhac` WHERE id_nhac = $id;";
 $row_thucthi = mysqli_query($ketnoi, $sql);
 $row_dulieu = mysqli_fetch_array($row_thucthi);

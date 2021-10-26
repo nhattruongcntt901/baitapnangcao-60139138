@@ -53,12 +53,6 @@ kiemtra_level_admin(2);
                         </div>
 
                         <div class="form-group">
-                           
-                            <!--                        <input type="text" name="level" class="form-control" placeholder="Level" autofocus required-->
-                            <!--                               value="--><?php //echo !empty($data['level']) ? $data['level'] : ''; ?>
-                            <!--"/>-->
-                            <!--                        --><?php //if (!empty($errors['level'])) echo $errors['level']; ?>
-                            
                             <select name="level">
                                 <option value="1">Level 1</option>
                                 <option value="2">Level 2</option>
@@ -67,8 +61,6 @@ kiemtra_level_admin(2);
                         <input type="submit" name="add_user" class="btn btn-success btn-block" value="Save Nhạc">
                     </form>
                 </div>
-                <!-- /.container-fluid -->
-
             </div>
             <?php  include ('footer.php'); ?>
             <!-- /.container-fluid -->

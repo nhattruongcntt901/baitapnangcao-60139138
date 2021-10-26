@@ -10,13 +10,13 @@ $thoigian = date("d/m/Y");
 if(isset($_POST['title'])&&isset($_POST['loi'])&&isset($_POST['singer']))
 {
 
-    $id = $_POST['id'];
+    $id     = $_POST['id'];
     $tieude = $_POST['title'];
     $loi    = $_POST['loi'];
     $singer = $_POST['singer'];
     if($loi =="")
         $loi = "Chưa có lời bài hát";
-    $thumuc = "../music/";
+    $thumuc    = "../music/";
     $file_name = $_FILES["upload_nhac"]["name"]; //Tên của file từ máy tính lên web
     $file_path = $thumuc.$file_name;
     $file_type = strtolower(pathinfo($file_path, PATHINFO_EXTENSION));
@@ -27,7 +27,7 @@ if(isset($_POST['title'])&&isset($_POST['loi'])&&isset($_POST['singer']))
 
     if(isset($_FILES['upload_anh']))
     {
-        $thumuc = "../music/anh/";
+        $thumuc    = "../music/anh/";
         $file_name = $_FILES["upload_anh"]["name"]; //Tên của file từ máy tính lên web
         $file_path = $thumuc.$file_name;
         $file_type = strtolower(pathinfo($file_path, PATHINFO_EXTENSION));

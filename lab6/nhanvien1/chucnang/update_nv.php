@@ -18,19 +18,18 @@ update_table('nhanvien','id_loainv',$loai_nv,'id_nv',$id_nv);
 update_table('nhanvien','id_phong',$phongban,'id_nv',$id_nv);
 
 if($_FILES['upload_anh']['name']!="")
-    {
-        echo "lõi";
-        $thumuc = "../anh_nv/";
-        $file_name = $_FILES["upload_anh"]["name"]; //Tên của file từ máy tính lên web
-        $file_path = $thumuc.$file_name;
-        $file_type = strtolower(pathinfo($file_path, PATHINFO_EXTENSION));
-        $name_form = "upload_anh"; //name trong form
-        $name_file_anh="$id_nv.$file_type"; //tên sau khi đổi và up lên database
-            
-        $name_file1="$id_nv"; //name file không đuôi để up lên server
-        upload_image_file($thumuc,$name_form,$name_file1);
-        update_table('nhanvien','anh_nv',$name_file_anh,'id_nv',$id_nv);
-    }
+{
+    $thumuc = "../anh_nv/";
+    $file_name = $_FILES["upload_anh"]["name"]; //Tên của file từ máy tính lên web
+    $file_path = $thumuc.$file_name;
+    $file_type = strtolower(pathinfo($file_path, PATHINFO_EXTENSION));
+    $name_form = "upload_anh"; //name trong form
+    $name_file_anh="$id_nv.$file_type"; //tên sau khi đổi và up lên database
+        
+    $name_file1="$id_nv"; //name file không đuôi để up lên server
+    upload_image_file($thumuc,$name_form,$name_file1);
+    update_table('nhanvien','anh_nv',$name_file_anh,'id_nv',$id_nv);
+}
 
 header("location: http://localhost/baitap/lab6/nhanvien1/page/danhsach_nv.php?page=1");
 
