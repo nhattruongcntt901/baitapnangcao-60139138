@@ -127,7 +127,7 @@ async function changeMusic(name){
     play();
     getMusic(name);
     var xhttp = new XMLHttpRequest();
-    xhttp.open('GET', 'chucnang/view_count.php?file_name=' + name, true);
+    xhttp.open('GET', '../chucnang/view_count.php?file_name=' + name, true);
     xhttp.send();
     if(anh_to!=null)
     {
