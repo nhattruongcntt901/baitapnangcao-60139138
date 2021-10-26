@@ -231,7 +231,7 @@
 
     </div>
     <!-- Thanh bottom bar -->
-    <audio id="music-run" src="music/Trí Dũng-Forget Me Now.mp3" style="width:100%" loop></audio>
+    <audio id="music-run" src="music/Trí Dũng-Forget Me Now.mp3" style="width:100%"></audio>
     <div id='bottomfixed' class="bottom-fixed show">
         <div onclick="bottom_show()"
             style="position: fixed;top: -5vh;left:5%;background-color: rgb(28, 40, 65);height:40px" class="like btn">
