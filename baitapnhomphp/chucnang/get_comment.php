@@ -1,6 +1,10 @@
 <?php
 session_start();
 include("../include/ketnoi.php");
+$id_user = $_SESSION['id_user'];
+$sql = "SELECT anh_user FROM user WHERE id_user = $id_user";
+$row = mysqli_fetch_assoc(mysqli_query($ketnoi,$sql));
+$anh_user = $row['anh_user'];
     if(isset($_GET['file_name']))
     {
         $file_name = $_GET['file_name'];
@@ -37,18 +41,18 @@ include("../include/ketnoi.php");
     }
 
 ?>
-<div style="position: absolute;bottom:0;width:100%">
-    <div>
-        <hr width="95%" style="border: solid rgb(255,255,255,0.3) 1px;" />
-    </div>
-    <form onsubmit="return submit_them_comment()">
-        <div class='flex-ngang flex-doc' style="width:100%">
-            <?php if(isset($_SESSION['id_user'])){ ?>
-            <div style='width:10%' class='flex-ngang'><img src="../anh_user/<?php echo $_SESSION['anh_user'];?>" style="border-radius:50%" width="50" height="50"/></div>
-            <?php }?>
-            <input id='cmt_<?php echo $file_name;?>' value="<?php echo $file_name;?>" class='d-none d-md-none'/>
-            <div style='width:80%'><textarea id='text_bl' class='text-area' style='width: 100%;' placeholder="Nhập vào bình luận của bạn....."></textarea></div>
-            <div style='width:10%' class='flex-ngang'><button class="btn btn-success material-icons-outlined">send</button></div>
-        </div>
-    </form>
-</div>
+                <div style="position: absolute;bottom:0;width:100%">
+                    <div>
+                        <hr width="95%" style="border: solid rgb(255,255,255,0.3) 1px;" />
+                    </div>
+                    <form onsubmit="return submit_them_comment()">
+                        <div class='flex-ngang flex-doc' style="width:100%">
+                            <?php if(isset($_SESSION['id_user'])){ ?>
+                            <div style='width:10%' class='flex-ngang'><img src="../anh_user/<?php echo $anh_user;?>" style="border-radius:50%" width="50" height="50"/></div>
+                            <?php }?>
+                            <input id='cmt_<?php echo $file_name;?>' value="<?php echo $file_name;?>" class='d-none d-md-none'/>
+                            <div style='width:80%'><textarea id='text_bl' class='text-area' style='width: 100%;' placeholder="Nhập vào bình luận của bạn....."></textarea></div>
+                            <div style='width:10%' class='flex-ngang'><button class="btn btn-success material-icons-outlined">send</button></div>
+                        </div>
+                    </form>
+                </div>
