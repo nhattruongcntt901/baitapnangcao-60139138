@@ -57,9 +57,9 @@ ob_start();
                     {
                         while ($row = mysqli_fetch_assoc($ketqua))
                         {
-                            $emailsql = $row['email'];
-                            $tendnsql = $row['n_user'];
-                            $sdtsql = $row['sdt'];
+                            $emailsql = $row['email_user'];
+                            $tendnsql = $row['name_user'];
+                            $sdtsql = $row['sdt_user'];
 
                             if($emailsql==$email)
                             {
