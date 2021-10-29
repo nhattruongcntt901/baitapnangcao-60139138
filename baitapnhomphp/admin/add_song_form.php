@@ -3,6 +3,7 @@
 <?php include("../chucnang/kiemtra_level_admin.php");
 //Từ level 2 trở lên được phép vào
 kiemtra_level_admin(1);
+//var_dump($_COOKIE);
 ?>
 
 <!DOCTYPE html>
@@ -37,12 +38,14 @@ kiemtra_level_admin(1);
                     <form action="../chucnang/add_song.php" method="post" enctype="multipart/form-data">
                         <div class="form-group">
                             <label>Tiêu đề nhạc*</label>
-                            <input type="text" name="title" class="form-control" placeholder="Tiêu đề" autofocus required>
+                            <input type="text" name="title" class="form-control" placeholder="Tiêu đề" autofocus value="
+">
+                            <p style="color:red;"><?php if (isset($_COOKIE['title'])) echo $_COOKIE['title']; ?></p>
                         </div>
                         <div class="form-group">
                             <label>Lời bài hát</label>
                             <textarea name="loi" id="" rows="2" class="form-control"
-                                placeholder="Lời bài hát"></textarea>
+                                placeholder="Lời bài hát"> </textarea>
                         </div>
                         <div class="form-group">
                             <label>Upload nhạc*</label>
@@ -54,9 +57,10 @@ kiemtra_level_admin(1);
                         </div>
                         <div class="form-group">
                             <label>Ca sĩ*</label>
-                            <textarea name="singer" id="" rows="2" class="form-control" placeholder="Ca sĩ" required></textarea>
+                            <input name="singer" id="" rows="2" class="form-control" placeholder="Ca sĩ" />
+                           <p style="color:red;"><?php if (isset($_COOKIE['singer'])) echo $_COOKIE['singer']; ?></p>
                         </div>
-                        <input type="submit" class="btn btn-success btn-block" value="Save Nhạc">
+                        <input type="submit" class="btn btn-success btn-block" value="Save Nhạc" name="btn-submit">
                     </form>
                 </div>
                 <!-- /.container-fluid -->

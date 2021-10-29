@@ -3,13 +3,14 @@
 <?php include("../chucnang/kiemtra_level_admin.php");
 //Từ level 2 trở lên được phép vào
 kiemtra_level_admin(2);
+//var_dump($_COOKIE);
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
 <!-- Head Tag -->
 <?php include('head.php'); ?>
-
 <body id="page-top">
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -40,15 +41,17 @@ kiemtra_level_admin(2);
                     <form action="../chucnang/add_user_admin.php" method="post">
                         <div class="form-group">
                             <label>Username *</label>
-                            <input type="text" name="username" class="form-control" placeholder="Username" autofocus
-                                required value="<?php echo !empty($data['username']) ? $data['username'] : ''; ?>" />
+                            <input type="text" name="username" class="form-control" placeholder="Username" autofocus value="
+<?php if (isset($_COOKIE['username_sticky'])) echo $_COOKIE['username_sticky'];?>
+"/>
+                            <p style="color:red;"><?php if (isset($_COOKIE['username'])) echo '*'.$_COOKIE['username'];?></p>
                             <?php if (!empty($errors['username'])) echo $errors['username']; ?>
 
                         </div>
                         <div class="form-group">
                             <label>Password *</label>
-                            <input type="text" name="password" class="form-control" placeholder="Password" autofocus
-                                required value="<?php echo !empty($data['password']) ? $data['password'] : ''; ?>" />
+                            <input type="password" name="password" class="form-control" placeholder="Password" autofocus/>
+                            <p style="color: red;"><?php if(isset($_COOKIE['password'])) echo '*'.$_COOKIE['password'];?></p>
                             <?php if (!empty($errors['password'])) echo $errors['password']; ?>
                         </div>
 
