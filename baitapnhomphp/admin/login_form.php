@@ -1,16 +1,31 @@
+<?php session_start();ob_start() ?>
+<?php
+
+if (isset($_COOKIE["login_error"]))
+{
+    echo $_COOKIE["login_error"];
+
+
+    //Xoá cookie login_error với value giả là "" và thời gian bị đẩy lùi về quá khứ
+    //Time() là hàm lấy thời gian hiện tại
+    setcookie('login_error',"",time()-6000);
+}
+?>
 <!--Connect MySQL Database -->
 <?php include('../include/ketnoi.php') ?>
 <!--Headder HTML -->
 <?php include('../include/head.php') ?>
 <!-- Login Processing -->
-<?php include('../chucnang/xuly_login_admin.php'); ?>
 <head>
     <!-- Login CSS -->
     <link rel="stylesheet" href="css/login2.css">
 </head>
 
+
 <body>
+
 <div class="container">
+
     <div class="d-flex justify-content-center h-100">
         <div class="card">
             <div class="card-header">
@@ -43,14 +58,6 @@
                         <input type="submit" value="Login" class="btn float-right login_btn" name="but_submit">
                     </div>
                 </form>
-            </div>
-            <div class="card-footer">
-                <div class="d-flex justify-content-center links">
-                    Don't have an account?<a href="#">Sign Up</a>
-                </div>
-                <div class="d-flex justify-content-center">
-                    <a href="#">Forgot your password?</a>
-                </div>
             </div>
         </div>
     </div>

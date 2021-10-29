@@ -1,7 +1,12 @@
 <?php
+session_start();
+ob_start();
 include("../include/ketnoi.php");
 //include("../include/chucnang.php");
-session_start();
+
+$alert = "<div class='alert alert-danger' role='alert'>
+  Mật khẩu và tài khoản không hợp lệ
+</div>";
 if (isset($_POST['but_submit'])) {
 
     //Để tránh sql injecttion, ta loại bỏ các kí tự thoát ( dấu , hoặc dấu ") thông qua mysqli_real_escape_string
@@ -25,8 +30,8 @@ if (isset($_POST['but_submit'])) {
 //level 3, full chức năng + xem và thêm user
 //level 2, chỉ cho phép xem và thêm song, thêm singer, ko đụng đến table user
 
-            $_SESSION['username']=$row['username'];
-            $_SESSION['level']=$row['level'];
+            $_SESSION['username'] = $row['username'];
+            $_SESSION['level'] = $row['level'];
             $_SESSION['id'] = $row['id'];
 
 //            echo "<br>Test Có $count kết quả<br>";
@@ -39,9 +44,20 @@ if (isset($_POST['but_submit'])) {
 //            //Nếu đăng nhập thành công thì flag_table_song = 1;
 //            echo $username;
         } else {
-            echo "<h1>Mật khẩu và tài khoản không hợp lệ<h1>";
-            echo "<a href='../admin/login_form.php'>Đăng nhập lại </a>";
+            setcookie("login_error",$alert,time()+1,"/");
+            header("Location: ../admin/login_form.php");
         }
     }
+
+
+    if (empty($username) || empty($password))
+    {
+        $alert_empty = "<div class='alert alert-danger' role='alert'>
+  Mật khẩu hoặc tài khoản không được để trống
+</div>";
+        setcookie("login_error",$alert_empty,time()+1,"/");
+        header("Location: ../admin/login_form.php");
+    }
+
 }
 ?>
